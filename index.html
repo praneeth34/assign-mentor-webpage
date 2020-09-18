@@ -63,22 +63,19 @@
           name: document.getElementById("sname").value,
           mentor: document.getElementById("mname").value,
         };
-        await fetch(
-          "https://condescending-poincare-9e23ea.netlify.app/student",
-          {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        await fetch("https://assign-mentor2.herokuapp.com/student", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         alert("done");
       }
       async function getStudentList() {
         try {
           let studentFetch = await fetch(
-            "https://condescending-poincare-9e23ea.netlify.app/students"
+            "https://assign-mentor2.herokuapp.com//students"
           );
           let data = await studentFetch.json();
           data.forEach((student, index) => {
