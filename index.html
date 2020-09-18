@@ -75,7 +75,7 @@
       async function getStudentList() {
         try {
           let studentFetch = await fetch(
-            "https://assign-mentor2.herokuapp.com//students"
+            "https://assign-mentor2.herokuapp.com/students"
           );
           let data = await studentFetch.json();
           data.forEach((student, index) => {
